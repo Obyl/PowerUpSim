@@ -36,6 +36,7 @@ public class Window extends Scene{
         super(ROOT, WIDTH, HEIGHT);
 
         simulator = new Simulator();
+        getStylesheets().add("/styles.css");
         loadElements();
     }
 
@@ -59,7 +60,7 @@ public class Window extends Scene{
         simulateButton.setGraphic(arrow);
         simulateButton.setPadding(new Insets(10, 10, 10, 10));
         simulateButton.setPrefSize(240, 50);
-        simulateButton.setStyle("-fx-font: 34 verdana; -fx-base: #28A7A5; -fx-text-fill: #08383A");
+        simulateButton.setId("simulate-button");
         simulateButton.setOnAction(event -> {
             simulator.run(robotInput0.getSpeed(), robotInput1.getSpeed(), robotInput2.getSpeed(),
                     powerUpInput.getPowerUps(),
@@ -87,17 +88,17 @@ public class Window extends Scene{
         inputTitle.setTranslateX(5);
         inputTitle.setTranslateY(5);
         inputTitle.setPadding(new Insets(3, 42, 3, 42));
-        inputTitle.setStyle("-fx-font: 22 verdana; -fx-background-color: #28A7A5");
+        inputTitle.getStyleClass().add("generic-title");
 
         Label speedLabel = new Label("Speed (ft/s):");
         speedLabel.setTranslateY(5);
-        speedLabel.setStyle("-fx-font: 18 verdana;");
+        speedLabel.setId("speed-label");
 
         TextField speedField = new TextField();
         speedField.setText("10");
         speedField.setPrefSize(50, 20);
         speedField.setTranslateX(20);
-        speedField.setStyle("-fx-font: 16 verdana; -fx-base: #28A7A5");
+        speedField.setId("speed-field");
         speedField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -118,7 +119,7 @@ public class Window extends Scene{
         tasksTitle.setTranslateX(5);
         tasksTitle.setTranslateY(20);
         tasksTitle.setPadding(new Insets(3, 17, 3, 17));
-        tasksTitle.setStyle("-fx-font: 22 verdana; -fx-background-color: #28A7A5");
+        tasksTitle.getStyleClass().add("generic-title");
 
         VBox taskPane = new VBox();
         taskPane.setSpacing(2);
@@ -130,12 +131,12 @@ public class Window extends Scene{
         taskList.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         taskList.setFitToWidth(true);
         taskList.setContent(taskPane);
-        taskList.setStyle("-fx-base: #38606A");
+        taskList.getStyleClass().add("generic-list");
 
         MenuBar addBar = new MenuBar();
         addBar.setTranslateX(18);
         addBar.setTranslateY(19);
-        addBar.setStyle("-fx-font: 18 verdana; -fx-base: #78F7F5; -fx-padding: 0 0 0 0");
+        addBar.getStyleClass().add("add-bar");
         Menu addMenu = new Menu("+");
         addBar.getMenus().add(addMenu);
 
@@ -193,11 +194,11 @@ public class Window extends Scene{
         Label taskLine1 = new Label();
         taskLine1.setTranslateX(5);
         taskLine1.setTranslateY(2);
-        taskLine1.setStyle("-fx-font: 18 verdana; -fx-base: #78F7F5");
+        taskLine1.getStyleClass().add("task-line");
 
         Label taskLine2 = new Label();
         taskLine2.setTranslateX(5);
-        taskLine2.setStyle("-fx-font: 18 verdana; -fx-base: #78F7F5");
+        taskLine1.getStyleClass().add("task-line");
 
         VBox taskText = new VBox();
         taskText.getChildren().addAll(taskLine1, taskLine2);
@@ -206,7 +207,7 @@ public class Window extends Scene{
         removeTask.setMinSize(30, 30);
         removeTask.setTranslateX(-3);
         removeTask.setTranslateY(9);
-        removeTask.setStyle("-fx-font: 18 arial;");
+        removeTask.getStyleClass().add("remove-button");
 
         Pane spacer = new Pane();
         task.setHgrow(spacer, Priority.ALWAYS);
@@ -269,17 +270,17 @@ public class Window extends Scene{
         inputTitle.setTranslateX(5);
         inputTitle.setTranslateY(5);
         inputTitle.setPadding(new Insets(3, 36, 3, 36));
-        inputTitle.setStyle("-fx-font: 22 verdana; -fx-background-color: #28A7A5");
+        inputTitle.getStyleClass().add("generic-title");
 
         Label info1 = new Label("If start time is -1");
         info1.setTranslateX(5);
         info1.setTranslateY(5);
-        info1.setStyle("-fx-font: 18 verdana;");
+        info1.getStyleClass().add("info-line");
 
         Label info2 = new Label("they activate ASAP.");
         info2.setTranslateX(5);
         info2.setTranslateY(2);
-        info2.setStyle("-fx-font: 18 verdana;");
+        info1.getStyleClass().add("info-line");
 
         HBox powerUpTitle = new HBox();
         powerUpTitle.setSpacing(4);
@@ -288,19 +289,19 @@ public class Window extends Scene{
         levelTitle.setTranslateX(5);
         levelTitle.setTranslateY(15);
         levelTitle.setPadding(new Insets(5, 7, 5, 7));
-        levelTitle.setStyle("-fx-font: 20 verdana; -fx-background-color: #28A7A5");
+        levelTitle.getStyleClass().add("power-up-title");
 
         Label startTitle = new Label("Start");
         startTitle.setTranslateX(5);
         startTitle.setTranslateY(15);
         startTitle.setPadding(new Insets(5, 7, 5, 7));
-        startTitle.setStyle("-fx-font: 20 verdana; -fx-background-color: #28A7A5");
+        startTitle.getStyleClass().add("power-up-title");
 
         MenuBar addBar = new MenuBar();
         addBar.setTranslateX(10);
         addBar.setTranslateY(13);
         addBar.setMaxWidth(30);
-        addBar.setStyle("-fx-font: 18 verdana; -fx-base: #78F7F5; -fx-padding: 0 0 0 0");
+        addBar.getStyleClass().add("add-bar");
         Menu addMenu = new Menu("+");
         addBar.getMenus().add(addMenu);
 
@@ -316,7 +317,7 @@ public class Window extends Scene{
         itemList.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         itemList.setFitToWidth(true);
         itemList.setContent(itemPane);
-        itemList.setStyle("-fx-base: #38686A");
+        itemList.getStyleClass().add("generic-list");
 
         MenuItem force = new MenuItem("Force");
         force.setOnAction(event -> {
@@ -350,27 +351,27 @@ public class Window extends Scene{
         Label powerUpDesc = new Label();
         powerUpDesc.setTranslateX(5);
         powerUpDesc.setTranslateY(5);
-        powerUpDesc.setStyle("-fx-font: 30 verdana;");
+        powerUpDesc.setId("power-up-desc");
 
         Button removePowerUp = new Button("X");
         removePowerUp.setTranslateX(-3);
         removePowerUp.setTranslateY(9);
         removePowerUp.setMinSize(30, 30);
-        removePowerUp.setStyle("-fx-font: 18 arial;");
+        removePowerUp.getStyleClass().add("remove-button");
 
         TextField levelField = new TextField();
         levelField.setTranslateX(-20);
         levelField.setTranslateY(9);
         levelField.setMaxWidth(35);
         levelField.setText("1");
-        levelField.setStyle("-fx-font: 16 verdana");
+        levelField.getStyleClass().add("power-up-field");
 
         TextField startField = new TextField();
         startField.setTranslateX(-17);
         startField.setTranslateY(9);
         startField.setMaxWidth(55);
         startField.setText("-1");
-        startField.setStyle("-fx-font: 16 verdana");
+        levelField.getStyleClass().add("power-up-field");
 
         Pane spacer = new Pane();
         powerUp.setHgrow(spacer, Priority.ALWAYS);

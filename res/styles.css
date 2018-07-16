@@ -1,0 +1,55 @@
+.add-bar {
+    -fx-font: 18 verdana;
+    -fx-base: #78F7F5;
+    -fx-padding: 0 0 0 0;
+}
+
+.generic-list {
+    -fx-base: #38606A;
+}
+
+.generic-title {
+    -fx-font: 22 verdana;
+    -fx-background-color: #28A7A5;
+}
+
+.info-line {
+    -fx-font: 18 verdana;
+}
+
+.power-up-field {
+    -fx-font: 16 verdana;
+}
+
+.power-up-title {
+    -fx-font: 20 verdana;
+    -fx-background-color: #28A7A5;
+}
+
+.remove-button {
+    -fx-font: 18 arial;
+}
+
+.task-line {
+    -fx-font: 18 verdana;
+    -fx-base: #78F7F5;
+}
+
+#power-up-desc {
+    -fx-font: 30 verdana;
+}
+
+#simulate-button {
+    -fx-font: 34 verdana;
+    -fx-base: #28A7A5;
+    -fx-text-fill: #08383A;
+}
+
+#speed-field {
+    -fx-font: 16 verdana;
+    -fx-base: #28A7A5;
+}
+
+#speed-label {
+    -fx-font: 18 verdana;
+}
