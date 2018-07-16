@@ -13,7 +13,7 @@ public class Main extends Application{
         stage.setScene(window);
         stage.setResizable(false);
         stage.setTitle("FIRST Power-Up Game Simulator");
-        stage.getIcons().add(new Image(Main.class.getResourceAsStream("/icon.png")));
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("/images/icon.png")));
         stage.show();
     }
 

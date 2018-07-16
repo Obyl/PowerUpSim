@@ -46,12 +46,12 @@ public class Window extends Scene{
         PowerUpInput powerUpInput = generatePowerUpInput();
 
         ImageView title = new ImageView();
-        title.setImage(new Image(Window.class.getResourceAsStream("/title.png")));
+        title.setImage(new Image(Window.class.getResourceAsStream("/images/title.png")));
         title.setTranslateX(10);
         title.setTranslateY(10);
 
         ImageView arrow = new ImageView();
-        arrow.setImage(new Image(Window.class.getResourceAsStream("/arrow.png")));
+        arrow.setImage(new Image(Window.class.getResourceAsStream("/images/arrow.png")));
 
         Button simulateButton = new Button("Simulate");
         simulateButton.setTranslateX(600);

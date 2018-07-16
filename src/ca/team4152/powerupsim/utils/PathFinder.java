@@ -63,7 +63,7 @@ public class PathFinder {
         BufferedImage collisionImage;
 
         try{
-            collisionImage = ImageIO.read(PathFinder.class.getResourceAsStream("/collision.png"));
+            collisionImage = ImageIO.read(PathFinder.class.getResourceAsStream("/images/collision.png"));
 
             width = collisionImage.getWidth();
             height = collisionImage.getHeight();
